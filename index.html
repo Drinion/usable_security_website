@@ -8,6 +8,11 @@
 
 <body>
     <div class="main">
+        <script>
+            function showPrompt() {
+                alert("All good!");
+            }
+        </script>
         <h1>Usable Security Demo</h1>
         <h3>Enter your login credentials</h3>
 
@@ -25,8 +30,6 @@
                 placeholder="Enter your Password" required>
 
         <h3>Choose a security question</h3>
-            <label for="questions">Choose a question:</label>
-
             <select name="questions" id="questions">
               <option value="birthplace">What is your birthplace?</option>
               <option value="birthday">When is your mothers birthday?</option>
@@ -34,7 +37,7 @@
             </select>
 
             <div class="wrap">
-                <button type="submit">
+                <button id="submit" onclick="showPrompt()"/>
                     Submit
                 </button>
             </div>
