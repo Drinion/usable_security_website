@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <script>
+        function validateInput(event) {
+            event.preventDefault(); // Prevent form from submitting
+
+            var str = document.getElementById('first').value;
+
+            if (str == 56) {
+                window.location.href = "login.html";
+            } else {
+                alert("Wrong card number!");
+            }
+        }
+    </script>
+
+    <body style="background-color: #818181ff">
+        <div class="row vh-100 align-items-center justify-content-center">
+            <div class="row">
+                <div class="card" style="width: 80rem; height: 40rem; border-radius: 3rem;">
+                    <div class="card-body">
+                        <img src="./logo.svg" class="rounded mx-auto d-block" alt="..." style="width: 30rem; height: 20rem;">
+                        <div class="col-12 text-center">
+                            <form onsubmit="validateInput(event)">
+                                <p>
+                                    <input type="text" id="first" name="first" placeholder="Enter the card number" required>
+                                </p>
+                                <div class="wrap">
+                                    <button type="submit" id="submit">Submit</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>

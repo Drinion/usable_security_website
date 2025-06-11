@@ -1,19 +1,15 @@
-body {
-  background-color: powderblue;
-  font-family: sans-serif;
+@font-face {
+  font-family: ArcadeFont;
+  src: url(VCR_OSD_MONO_1.001.ttf);
 }
-h1 {
-  color: blue;
-  font-family: sans-serif;
+body {
+  font-family: ArcadeFont;
+}
+h5 {
+  color: black;
+  font-family: ArcadeFont;
 }
 p {
   color: black;
-  font-family: sans-serif;
-}
-
-.centered {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  font-family: ArcadeFont;
 }
