@@ -5,29 +5,17 @@
                                integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
                                crossorigin="anonymous">
         <script>
-            let birthplace = false;
-            let birthday = false;
-            var qst = document.getElementById('questions').value;
 
             function validateQuestions(event) {
+                event.preventDefault(); // Prevent form from submitting
+                var qst = document.getElementById('questions').value;
+
                 if (qst == "movie") {
-                    alert("Congrats! You chose the right question!")
-                } else if (qst == "birthplace" && !birthplace) {
-                    const para = document.createElement("p");
-                    const node = document.createTextNode("You shouldn't choose security questions that can be easily inferred! Remove the mug card from the deck.");
-                    para.appendChild(node);
-
-                    const element = document.getElementById("questions-form");
-                    element.appendChild(para);
-                    birthplace = true;
+                    document.getElementById("info-box").innerHTML = "Congrats! You chose the right question!"
+                } else if (qst == "birthplace") {
+                    document.getElementById("info-box").innerHTML = "You shouldn't choose security questions that can be easily inferred! Remove the mug card from the deck."
                 } else {
-                    const para = document.createElement("p");
-                    const node = document.createTextNode("You shouldn't choose security questions that can be easily inferred! Remove the calendar card from the deck.");
-                    para.appendChild(node);
-
-                    const element = document.getElementById("questions-form");
-                    element.appendChild(para);
-                    birthday = true;
+                    document.getElementById("info-box").innerHTML = "You shouldn't choose security questions that can be easily inferred! Remove the calendar card from the deck."
                 }
             }
         </script>
@@ -49,6 +37,8 @@
                                 <button type="submit" id="submit">Submit</button>
                             </div>
                         </form>
+                    <div id="info-box" class="card-body text-center">
+                    </div>
                     </div>
                 </div>
             </div>

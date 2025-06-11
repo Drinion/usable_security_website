@@ -27,7 +27,7 @@
                     element.appendChild(para);
                     points += 15;
                 } else {
-                    const updateElement = document.getElementById("login-node").innerHTML = "Weak password! You've lost " + points + " points!"
+                    document.getElementById("login-node").innerHTML = "Weak password! You've lost " + points + " points!"
                     points += 15;
                 }
             }
