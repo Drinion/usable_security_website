@@ -13,10 +13,13 @@
 
                 if (qst == "movie") {
                     document.getElementById("info-box").innerHTML = "Congrats! You chose the right question!"
+                    document.getElementById("info-logo").innerHTML = '<img src="pick_58.svg" class="rounded mx-auto d-block" alt="..." style="width: 25rem; height: 15rem;">'
                 } else if (qst == "birthplace") {
-                    document.getElementById("info-box").innerHTML = "You shouldn't choose security questions that can be easily inferred! Remove the mug card from the deck."
+                    document.getElementById("info-box").innerHTML = "You shouldn't choose security questions whose answers can be easily inferred! Remove the mug card from the deck."
+                    document.getElementById("info-logo").innerHTML = '<img src="drop_29.svg" class="rounded mx-auto d-block" alt="..." style="width: 15rem; height: 15rem;">'
                 } else {
-                    document.getElementById("info-box").innerHTML = "You shouldn't choose security questions that can be easily inferred! Remove the calendar card from the deck."
+                    document.getElementById("info-box").innerHTML = "You shouldn't choose security questions whose answers can be easily inferred! Remove the calendar card from the deck."
+                    document.getElementById("info-logo").innerHTML = '<img src="drop_12.svg" class="rounded mx-auto d-block" alt="..." style="width: 15rem; height: 15rem;">'
                 }
             }
         </script>
@@ -39,6 +42,8 @@
                             </div>
                         </form>
                         <div id="info-box" class="card-body text-center">
+                        </div>
+                        <div id="info-logo" class="card-body">
                         </div>
                     </div>
                 </div>
