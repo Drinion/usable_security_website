@@ -6,24 +6,22 @@
                                integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
                                crossorigin="anonymous">
         <script>
+            var points = 0;
 
             function validateQuestions(event) {
                 event.preventDefault(); // Prevent form from submitting
                 var qst = document.getElementById('questions').value;
-                var points = 0;
 
                 if (qst == "movie") {
-                    document.getElementById("info-box").innerHTML = "Congrats! You chose the right question!"
+                    document.getElementById("info-box").innerHTML = "<p>You chose the right question and you lost " + points + " Points!</p>"
                     document.getElementById("info-logo").innerHTML = '<img src="pick_58.svg" class="rounded mx-auto d-block" alt="..." style="width: 25rem; height: 15rem;">'
                 } else if (qst == "birthplace") {
                     points += 5
-
-                    document.getElementById("info-box").innerHTML = "You've lost " + points + " points! You shouldn't choose security questions whose answers can be easily inferred! Remove the mug card from the deck and continue until you can find the correct question."
+                    document.getElementById("info-box").innerHTML = "<p>You've lost " + points + " points! You shouldn't choose security questions whose answers can be easily inferred! Remove the mug card from the deck and continue until you can find the correct question.</p>"
                     document.getElementById("info-logo").innerHTML = '<img src="drop_29.svg" class="rounded mx-auto d-block" alt="..." style="width: 15rem; height: 15rem;">'
                 } else {
                     points += 5
-
-                    document.getElementById("info-box").innerHTML = "You've lost " + points + " points! You shouldn't choose security questions whose answers can be easily inferred! Remove the calendar card from the deck and continue until you can find the correct question."
+                    document.getElementById("info-box").innerHTML = "<p>You've lost " + points + " points! You shouldn't choose security questions whose answers can be easily inferred! Remove the calendar card from the deck and continue until you can find the correct question.</p>"
                     document.getElementById("info-logo").innerHTML = '<img src="drop_12.svg" class="rounded mx-auto d-block" alt="..." style="width: 15rem; height: 15rem;">'
                 }
             }

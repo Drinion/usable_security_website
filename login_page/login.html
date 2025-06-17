@@ -7,7 +7,7 @@
                                integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
                                crossorigin="anonymous">
         <script>
-            let points = 3;
+            let points = 0;
 
             function goToLogin(event) {
                 window.location.href = "security_questions.html";
@@ -20,11 +20,12 @@
                 var re = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
 
                 if (re.test(str)) {
-                    document.getElementById("info-box").innerHTML = "<p>Good! You chose a strong password!</p><button onclick='goToLogin()'>Next</button>";
+                    document.getElementById("submit-button").innerHTML = "<p></p>";
+                    document.getElementById("info-box").innerHTML = "<p>You chose a strong password and you've lost " + points + " Points!</p><button onclick='goToLogin()'>Next</button>";
+                    document.getElementById("logo-box").innerHTML = '<img src="drop_56.svg" class="rounded mx-auto d-block" alt="..." style="width: 15rem; height: 15rem;">'
                 } else {
-                    document.getElementById("info-box").innerHTML = "Weak password! You've lost " + points + " points!";
-
                     points += 3;
+                    document.getElementById("info-box").innerHTML = "Weak password! You've lost " + points + " points!";
                 }
             }
         </script>
@@ -45,11 +46,13 @@
                             <p>
                             <input type="password" id="password" name="password" placeholder="Enter your Password" required>
                             </p>
-                            <div class="wrap">
+                            <div id="submit-button" class="wrap">
                                 <button type="submit" id="submit">Submit</button>
                             </div>
                         </form>
                         <div id="info-box">
+                        </div>
+                        <div id="logo-box">
                         </div>
                     </div>
                 </div>
