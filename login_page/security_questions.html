@@ -10,15 +10,20 @@
             function validateQuestions(event) {
                 event.preventDefault(); // Prevent form from submitting
                 var qst = document.getElementById('questions').value;
+                var points = 0;
 
                 if (qst == "movie") {
                     document.getElementById("info-box").innerHTML = "Congrats! You chose the right question!"
                     document.getElementById("info-logo").innerHTML = '<img src="pick_58.svg" class="rounded mx-auto d-block" alt="..." style="width: 25rem; height: 15rem;">'
                 } else if (qst == "birthplace") {
-                    document.getElementById("info-box").innerHTML = "You shouldn't choose security questions whose answers can be easily inferred! Remove the mug card from the deck."
+                    points += 5
+
+                    document.getElementById("info-box").innerHTML = "You've lost " + points + " points! You shouldn't choose security questions whose answers can be easily inferred! Remove the mug card from the deck and continue until you can find the correct question."
                     document.getElementById("info-logo").innerHTML = '<img src="drop_29.svg" class="rounded mx-auto d-block" alt="..." style="width: 15rem; height: 15rem;">'
                 } else {
-                    document.getElementById("info-box").innerHTML = "You shouldn't choose security questions whose answers can be easily inferred! Remove the calendar card from the deck."
+                    points += 5
+
+                    document.getElementById("info-box").innerHTML = "You've lost " + points + " points! You shouldn't choose security questions whose answers can be easily inferred! Remove the calendar card from the deck and continue until you can find the correct question."
                     document.getElementById("info-logo").innerHTML = '<img src="drop_12.svg" class="rounded mx-auto d-block" alt="..." style="width: 15rem; height: 15rem;">'
                 }
             }

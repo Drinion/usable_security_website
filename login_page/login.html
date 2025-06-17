@@ -7,7 +7,11 @@
                                integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
                                crossorigin="anonymous">
         <script>
-            let points = 15;
+            let points = 3;
+
+            function goToLogin(event) {
+                window.location.href = "security_questions.html";
+            }
 
             function validatePassword(event) {
                 event.preventDefault(); // Prevent form from submitting
@@ -16,19 +20,11 @@
                 var re = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
 
                 if (re.test(str)) {
-                    window.location.href = "security_questions.html";
-                } else if (points == 15) {
-                    const para = document.createElement("p");
-                    para.setAttribute("id", "login-node");
-                    const node = document.createTextNode("Weak password! You've lost " + points + " points!");
-                    para.appendChild(node);
-
-                    const element = document.getElementById("login-form");
-                    element.appendChild(para);
-                    points += 15;
+                    document.getElementById("info-box").innerHTML = "<p>Good! You chose a strong password!</p><button onclick='goToLogin()'>Next</button>";
                 } else {
-                    document.getElementById("login-node").innerHTML = "Weak password! You've lost " + points + " points!"
-                    points += 15;
+                    document.getElementById("info-box").innerHTML = "Weak password! You've lost " + points + " points!";
+
+                    points += 3;
                 }
             }
         </script>
